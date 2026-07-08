@@ -346,7 +346,16 @@
   }
   .link-card:hover{ transform: translateY(-2px); box-shadow: 0 14px 28px rgba(20,4,20,0.4); }
   .link-card:focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
-  .link-card-art{ display:block; width:100%; height:auto; }
+  .link-card-art {
+    display: block;
+    width: 100%;
+    max-width: 900px;   /* Increase or remove if you want the original size */
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
   .link-card-body{ padding: 14px 16px 16px; text-align:left; }
   .link-card-title{
     margin:0 0 4px; font-family:'Playfair Display', serif; font-weight:700;
@@ -360,6 +369,13 @@
     margin:0; font-size:.72rem; letter-spacing:.04em;
     text-transform:uppercase; color: var(--rose-soft);
   }
+
+  .link-card-image-only {
+    width: 100%;
+    max-width: 900px;
+    margin: 24px auto;
+    text-align: center;
+}
 
   .wish-title{
     font-family:'Playfair Display', serif;
@@ -539,33 +555,9 @@
         <text x="170" y="42" text-anchor="middle" font-size="16" font-style="italic" font-weight="600" fill="#3a1730">To my Gohan</text>
         <text x="170" y="100" text-anchor="middle" font-size="14" font-weight="600" fill="#3a1730" opacity="0.9">from your Videl</text>
       </svg>
-      <a class="link-card" href="https://www.cbr.com/dragon-ball-z-gohan-videl-early-similarities/" target="_blank" rel="noopener noreferrer">
-        <svg class="link-card-art" viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-          <defs>
-            <linearGradient id="lcSky" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#5a2a63"/>
-              <stop offset="100%" stop-color="#7a3a6a"/>
-            </linearGradient>
-          </defs>
-          <rect width="300" height="140" fill="url(#lcSky)"/>
-          <circle cx="245" cy="30" r="16" fill="#ffe6a8" opacity="0.85"/>
-          <circle cx="30" cy="24" r="2" fill="#fff" opacity="0.6"/>
-          <circle cx="60" cy="40" r="1.5" fill="#fff" opacity="0.5"/>
-          <circle cx="100" cy="18" r="2" fill="#fff" opacity="0.7"/>
-          <circle cx="180" cy="60" r="1.5" fill="#fff" opacity="0.4"/>
-          <!-- two silhouettes -->
-          <path d="M110 118 C110 95, 122 85, 132 85 C142 85, 154 95, 154 118 Z" fill="#2b1332"/>
-          <circle cx="132" cy="76" r="12" fill="#2b1332"/>
-          <path d="M158 118 C158 92, 172 80, 184 80 C196 80, 210 92, 210 118 Z" fill="#2b1332"/>
-          <circle cx="184" cy="70" r="13" fill="#2b1332"/>
-          <path class="ded-heart" d="M158 60 C155 54, 146 54, 145 61 C144 68, 152 74, 158 80 C164 74, 172 68, 171 61 C170 54, 161 54, 158 60 Z" fill="#ff8fa3"/>
-        </svg>
-        <div class="link-card-body">
-          <p class="link-card-title">Kisah Gohan &amp; Videl</p>
-          <p class="link-card-desc">Bagaimana permulaan kisah mereka bermula — baca kisah penuh di CBR</p>
-          <p class="link-card-domain">cbr.com ↗</p>
-        </div>
-      </a>
+      <div class="link-card-image-only">
+        <img src="gohanvidel.jpg" alt="Gohan & Videl" class="link-card-art">
+      </div>
     </div>
     <button class="btn ghost" id="restartBtn">Buat ucapan lain</button>
   </div>
