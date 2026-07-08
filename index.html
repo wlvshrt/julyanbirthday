@@ -492,6 +492,63 @@
     <footer class="credit">Dibuat dengan ❤️, khas untuk hari istimewa kamu</footer>
   </div>
 
+  <!-- new Screen -->
+
+  <div class="screen" id="screen-name" style="display:none;">
+
+      <p class="eyebrow">Sebelum bermula...</p>
+
+      <h1>Siapa yang sedang<br><em>menonton?</em></h1>
+
+      <div class="card">
+
+          <label>Masukkan nama anda</label>
+
+          <input
+              type="text"
+              id="partnerInput">
+
+          <p id="nameError" class="error"></p>
+
+          <br><br>
+
+          <button class="btn" id="goVideo" disabled>
+              Teruskan →
+          </button>
+
+      </div>
+
+  </div>
+
+  <!-- video screen -->
+   <div class="screen" id="screen-video" style="display:none;">
+
+      <p class="eyebrow">Pesanan khas</p>
+
+      <h1>Untuk <em id="viewerName"></em></h1>
+
+      <div class="card">
+
+          <video
+              id="birthdayVideo"
+              controls
+              width="100%"
+              style="border-radius:15px">
+
+              <source src="video.mp4" type="video/mp4">
+
+          </video>
+
+          <br><br>
+
+          <button class="btn" id="goCandleNow">
+              Teruskan →
+          </button>
+
+      </div>
+
+  </div>
+
   <!-- SCREEN 2: CANDLE -->
   <div class="screen" id="screen-candle">
     <p class="eyebrow">Sebelum tu...</p>
@@ -572,6 +629,31 @@
   var screenCandle = document.getElementById('screen-candle');
   var screenWish = document.getElementById('screen-wish');
   var screenDedication = document.getElementById('screen-dedication');
+  var screenName = document.getElementById("screen-name");
+  var screenVideo = document.getElementById("screen-video");
+
+  var partnerInput = document.getElementById("partnerInput");
+  var goVideo = document.getElementById("goVideo");
+  var nameError = document.getElementById("nameError");
+
+  partnerInput.addEventListener("input", function () {
+
+      var name = this.value.trim();
+
+      if (name.toLowerCase() === "hidayah") {
+          goVideo.disabled = false;
+          nameError.textContent = "";
+      } else {
+          goVideo.disabled = true;
+
+          if (name !== "") {
+              nameError.textContent = "Maaf, halaman ini hanya untuk Hidayah ❤️";
+          } else {
+              nameError.textContent = "";
+          }
+      }
+  });
+
 
   var userName = 'Hidayah';
   var partnerName = 'Julyan';
